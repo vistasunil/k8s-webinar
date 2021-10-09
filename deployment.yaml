@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-demo-website
+  namespace: web
+  labels:
+    app: myweb
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myweb
+  template:
+    metadata:
+      labels:
+        app: myweb
+    spec:
+      containers:
+      - name: myweb
+        image: vistasunil/devopsdemo:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "250m"
