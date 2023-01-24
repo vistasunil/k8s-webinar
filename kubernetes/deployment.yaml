@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
       - name: myweb
-        image: vistasunil/devopsdemo:latest
+        image: vistasunil/devopsdemo:10
         ports:
         - containerPort: 80
         resources:
           requests:
-            cpu: "250m"
+            cpu: "100m"
